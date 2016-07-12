@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'pledges/index'
+
+  get 'pledges/new'
+
+  get 'pledges/show'
+
+  get 'pledges/create'
+
   get 'projects/index'
 
   get 'projects/new'
