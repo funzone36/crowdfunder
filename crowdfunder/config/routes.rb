@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   # get 'sessions/new'
   #
-  # get 'sessions/create'
-  # # post 'sessions/'
+  # # get 'sessions/create'
+  # post 'sessions' => 'sessions#create'
   #
   # get 'sessions/destroy'
 
