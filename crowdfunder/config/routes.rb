@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+  # get 'sessions/new'
+  #
+  # get 'sessions/create'
+  # # post 'sessions/'
+  #
+  # get 'sessions/destroy'
+
   root 'projects#index'
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   resources :projects do
      #resources :rewards
      resources :pledges
