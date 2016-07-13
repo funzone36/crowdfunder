@@ -16,5 +16,23 @@
   <div class="action">
     <%= f.submit %>
   </div>
+  <div class="field">
+    <h2>Rewards</h2>
 
+    <%= f.fields_for :rewards do |rewards_fields| %>
+      <div class="field">
+        <%= rewards_fields.label :name %>
+        <%= rewards_fields.text_field :name %>
+      </div>
+      <div class="field">
+        <%= rewards_fields.label :amount %>
+        <%= rewards_fields.number_field :amount %>
+      </div>
+      <div class="field">
+        <%= rewards_fields.label :description %>
+        <%= rewards_fields.text_area :description %>
+      </div>
+    <% end %>
+
+  </div>
 <% end %>
