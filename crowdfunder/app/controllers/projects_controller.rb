@@ -1,4 +1,4 @@
-class ProjectsController < ApplicationController
+  class ProjectsController < ApplicationController
   before_action :authenticate_user, :except => [:index, :show]
 
   def index
@@ -54,7 +54,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :goal, :deadline, rewards_attributes: [:name, :description, :amount])
+    params.require(:project).permit(:name, :goal, :description, :deadline, rewards_attributes: [:name, :description, :amount])
   end
 
 end
