@@ -29,7 +29,8 @@ class PledgesController < ApplicationController
   private
 
   def pledges_params
-    params.require(:pledge).permit(:amount)
+
+    params.permit(:amount, :project_id)
   end
 
 end

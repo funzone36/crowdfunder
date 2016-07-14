@@ -6,9 +6,10 @@ validate :deadline_past
 
 private
 
+
   def deadline_past
     if self.project.deadline.past?
-      errors.add("Deadline is past")
+        errors.add("Deadline is past")
     end
   end
 end
