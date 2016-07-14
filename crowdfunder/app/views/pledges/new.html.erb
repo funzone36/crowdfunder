@@ -1,6 +1,6 @@
 <h1>Pledges#new</h1>
 
-<%= form_for @pledge do |f| %>
+<%= form_for [@project, @pledge] do |f| %>
   <div class="field">
     <%= f.label :amount %>
     <%= f.number_field :amount %>
