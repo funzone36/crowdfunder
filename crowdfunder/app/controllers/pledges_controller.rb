@@ -5,7 +5,9 @@ class PledgesController < ApplicationController
   end
 
   def new
-    @pledges = Pledge.new
+    @pledge = Pledge.new
+
+    @project = Project.find(pledges_params[:project_id])
   end
 
   def show
@@ -16,7 +18,7 @@ class PledgesController < ApplicationController
     @pledge = Pledge.new(pledges_params)
 
     if @pledge.save
-      redirect_to pledges_path
+      redirect_to new_project_pledge_path
     else
       render :new
     end
@@ -25,7 +27,7 @@ class PledgesController < ApplicationController
   private
 
   def pledges_params
-    params.require(:pleges).permit(:amount)
+    params.permit(:amount, :project_id)
   end
 
 end
