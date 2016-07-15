@@ -14,6 +14,11 @@ class PledgesController < ApplicationController
   def new
     @project = Project.find(params[:project_id])
     @pledge = @project.pledges.build
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @pledge}
+    end
   end
 
   def show
@@ -37,7 +42,7 @@ class PledgesController < ApplicationController
           redirect_to project_path(@project)
         end
         format.json { render json: @pledge}
-      end 
+      end
     else
       render :new
     end

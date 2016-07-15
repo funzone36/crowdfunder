@@ -7,9 +7,10 @@ $(function(){
       url: $(this).attr('href'),
       method: 'get',
       data: {},
-      dataType: 'json'
+      dataType: 'html'
     }).done(function(responseData) {
       console.log(responseData)
+      $('#pledge').append(responseData)
     }).fail(function(){
       console.log("fail");
     })
