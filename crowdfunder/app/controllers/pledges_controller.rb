@@ -1,4 +1,5 @@
 class PledgesController < ApplicationController
+  before_action :authenticate_user, :except => [:index, :show]
 
   def index
     @project = Project.find(params[:project_id])
@@ -18,6 +19,7 @@ class PledgesController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     @pledge = @project.pledges.build(pledges_params)
+    @pledge.user = current_user
 
     if @pledge.save
       redirect_to project_path(@project)
