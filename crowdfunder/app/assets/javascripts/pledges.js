@@ -1,10 +1,7 @@
 
 
 $(function(){
-  alert("first alert")
     $('#pledge >li > a').on('click', function(eventObject){
-      alert("hey")
-      console.log("clicked")
       eventObject.preventDefault();
       $.ajax({
       url: $(this).attr('href'),
@@ -12,14 +9,9 @@ $(function(){
       data: {},
       dataType: 'json'
     }).done(function(responseData) {
-      console.log("hello")
+      console.log(responseData)
     }).fail(function(){
       console.log("fail");
     })
     });
-});
-
-
-$(function(){
-    console.log("works");
 });
