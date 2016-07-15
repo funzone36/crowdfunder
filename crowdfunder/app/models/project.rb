@@ -16,10 +16,22 @@ class Project < ActiveRecord::Base
       total_funds += pledge.amount
     end
     total_funds
-
   end
 
-  
+
+  def percent_completion
+
+    percent = self.pledged_funds.to_f/self.goal*100.0
+
+    # if percent == self.goal
+    #   puts "Target Reached!"
+    # else
+    #   puts "Keep Pledging!!"
+    # end
+      percent.round(2)
+  end
+
+
 
   # checks to see if a project is fully funded
   def fully_funded?
