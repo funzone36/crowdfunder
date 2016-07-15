@@ -19,6 +19,8 @@ class Project < ActiveRecord::Base
 
   end
 
+  
+
   # checks to see if a project is fully funded
   def fully_funded?
     if self.pledged_funds >= self.goal
