@@ -4,6 +4,11 @@ class PledgesController < ApplicationController
   def index
     @project = Project.find(params[:project_id])
     @pledges = @project.pledges.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @pledges}
+    end
   end
 
   def new
@@ -14,6 +19,11 @@ class PledgesController < ApplicationController
   def show
     @project = Project.find(params[:project_id])
     @pledge = Pledge.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @pledge}
+    end
   end
 
   def create
@@ -22,7 +32,12 @@ class PledgesController < ApplicationController
     @pledge.user = current_user
 
     if @pledge.save
-      redirect_to project_path(@project)
+      respond_to do |format|
+        format.html do
+          redirect_to project_path(@project)
+        end
+        format.json { render json: @pledge}
+      end 
     else
       render :new
     end

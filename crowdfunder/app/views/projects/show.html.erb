@@ -1,6 +1,6 @@
-<h1>Projects#show</h1>
-
-
 <h2>Pledged funds <span><%= @project.pledged_funds %></span></h2>
 
-<%= link_to 'Pledge', new_project_pledge_path(@project) unless current_user.has_funded?(@project) %>
+
+<ul id="pledge">
+  <li><%= link_to 'Pledge', new_project_pledge_path(@project) unless current_user.has_funded?(@project) || @project.fully_funded?%></li>
+</ul>
