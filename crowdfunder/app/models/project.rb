@@ -11,11 +11,11 @@ class Project < ActiveRecord::Base
     #   sum + pledge.amount
     # end
 
-    result = 0
+    total_funds = 0
     self.pledges.all.each do |pledge|
       result += pledge.amount
     end
-    result
+    total_funds
 
   end
 
