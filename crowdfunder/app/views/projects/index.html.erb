@@ -1,85 +1,88 @@
 
-    <div class="container">
+<div class="container">
 
-        <!-- Page Heading -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Crowdfunder
-                    <small>Pick something to fund!</small>
-                </h1>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Project One -->
-
-        <% @projects.each do |project| %>
-        <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <%= image_tag "PuzzlePiece2.jpg", class: 'img-responsive' %>
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h1><%= project.name %></h1>
-                <h3>Goal: $<%= project.goal %></h3>
-                <h3>Raised: $<%= project.pledged_funds %></h3>
-                <h3>Backers: <%= project.count_pledges %></h3>
-                <h3><%= project.percent_completion < 100 ?  "Keep pledging!!" : "Fully Funded!!" %> </h3>
-                <h3><%= project.percent_completion %>% of funds have been raised</h3>
-                <h4>Deadline:</h4> <span><%= project.deadline %></span>
-                <p> Description: <%= project.description %></p>
-                <a class="btn btn-primary" href="/projects/<%= project.id %>">View Project</a>
-            </div>
-        </div>
-        <hr>
-
-        <% end %>
-        <!-- /.row -->
-
-
-
-        <!-- Pagination -->
-        <div class="row text-center">
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
-
+  <!-- Page Heading -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Crowdfunder
+        <small>Pick something to fund!</small>
+      </h1>
     </div>
-    <!-- /.container -->
+  </div>
+  <!-- /.row -->
+
+  <!-- Project One -->
+
+  <% @projects.each do |project| %>
+  <div class="row">
+    <div class="col-md-7">
+      <a href="#">
+        <%= image_tag "PuzzlePiece2.jpg", class: 'img-responsive' %>
+      </a>
+    </div>
+    <div class="col-md-5">
+      <h1><%= project.name %></h1>
+      <h3>Goal: $<%= project.goal %></h3>
+      <h3>Raised: $<%= project.pledged_funds %></h3>
+      <h3>Backers: <%= project.count_pledges %></h3>
+      <h3><%= project.percent_completion < 100 ?  "Keep pledging!!" : "Fully Funded!!" %> </h3>
+      <h3><%= project.percent_completion %>% of funds have been raised</h3>
+      <div class="pie" style="animation-delay: -<%= (100 - project.percent_completion) %>s">
+        <%= project.percent_completion %>%
+      </div>
+      <h4>Deadline:</h4> <span><%= project.deadline %></span>
+      <p> Description: <%= project.description %></p>
+      <a class="btn btn-primary" href="/projects/<%= project.id %>">View Project</a>
+    </div>
+  </div>
+  <hr>
+
+  <% end %>
+  <!-- /.row -->
+
+
+
+  <!-- Pagination -->
+  <div class="row text-center">
+    <div class="col-lg-12">
+      <ul class="pagination">
+        <li>
+          <a href="#">&laquo;</a>
+        </li>
+        <li class="active">
+          <a href="#">1</a>
+        </li>
+        <li>
+          <a href="#">2</a>
+        </li>
+        <li>
+          <a href="#">3</a>
+        </li>
+        <li>
+          <a href="#">4</a>
+        </li>
+        <li>
+          <a href="#">5</a>
+        </li>
+        <li>
+          <a href="#">&raquo;</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="row">
+      <div class="col-lg-12">
+
+      </div>
+    </div>
+    <!-- /.row -->
+  </footer>
+
+</div>
+<!-- /.container -->
