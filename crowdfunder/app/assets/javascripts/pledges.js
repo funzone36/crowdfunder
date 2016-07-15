@@ -1,7 +1,9 @@
 
 
 $(function(){
+  alert("first alert")
     $('#pledge >li > a').on('click', function(eventObject){
+      alert("hey")
       console.log("clicked")
       eventObject.preventDefault();
       $.ajax({
