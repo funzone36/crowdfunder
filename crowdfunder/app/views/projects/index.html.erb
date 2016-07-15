@@ -25,6 +25,7 @@
                 <h3>Goal: $<%= project.goal %></h3>
                 <h3>Raised: $<%= project.pledged_funds %></h3>
                 <h3>Backers: <%= project.count_pledges %></h3>
+                <h3><%= project.percent_completion < 100 ?  "Keep pledging!!" : "Fully Funded!!" %> </h3>
                 <h3><%= project.percent_completion %>% of funds have been raised</h3>
                 <h4>Deadline:</h4> <span><%= project.deadline %></span>
                 <p> Description: <%= project.description %></p>
