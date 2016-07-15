@@ -14,21 +14,21 @@ footer {
     margin: 50px 0;
 }
 
-
-
-
 /* Users style */
 
 #container_position {
- position: absolute;
- width: 300px;
- height: 200px;
- z-index: 15;
- top: 50%;
- left: 50%;
- margin: -100px 0 0 -150px;
+   position: absolute;
+   width: 300px;
+   height: 200px;
+   z-index: 15;
+   top: 50%;
+   left: 50%;
+   margin: -100px 0 0 -150px;
 }
 
+#form_for_new_user {
+  padding: 15px
+}
 
 
 /* Pledges style */
