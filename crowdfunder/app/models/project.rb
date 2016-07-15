@@ -28,4 +28,10 @@ class Project < ActiveRecord::Base
     end
   end
 
+  def count_pledges
+
+    self.pledges.all.count
+
+  end
+
 end
